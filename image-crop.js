@@ -1,16 +1,7 @@
-/**
- * AngularJS Directive - Image Crop v1.0
- * Copyright (c) 2014 Andy Shora, andyshora@gmail.com, andyshora.com
- * Licensed under the MPL License [http://www.nihilogic.dk/licenses/mpl-license.txt]
- */
+
 (function() {
 
-  /*
-   * DEPENDENCY
-   * Javascript BinaryFile
-   * Copyright (c) 2008 Jacob Seidelin, jseidelin@nihilogic.dk, http://blog.nihilogic.dk/
-   * Licensed under the MPL License [http://www.nihilogic.dk/licenses/mpl-license.txt]
-   */
+ 
 
   var BinaryFile = function(strData, iDataOffset, iDataLength) {
       var data = strData;
@@ -451,8 +442,7 @@
 
               marker = file.getByteAt(offset + 1);
 
-              // we could implement handling for other markers here, 
-              // but we're only looking for 0xFFE1 for EXIF data
+              
 
               if (marker == 22400) {
                   if (debug)
@@ -460,10 +450,9 @@
 
                   return readEXIFData(file, offset + 4, file.getShortAt(offset + 2, true) - 2);
 
-                  // offset += 2 + file.getShortAt(offset+2, true);
-
+               
               } else if (marker == 225) {
-                  // 0xE1 = Application-specific 1 (for EXIF)
+               
                   if (debug)
                       console.log("Found 0xFFE1 marker");
 
